@@ -1,5 +1,6 @@
 import jsonData from "./data.js";
 
+const MONTH = 30;
 let chart;
 
 // USD -> WON 변환
@@ -80,18 +81,18 @@ function makeLineChart() {
       var obj = {
         label: element.Vender + " : " + element.Name,
         data: [
-          element["Cost per hour"] * 1,
-          element["Cost per hour"] * 2,
-          element["Cost per hour"] * 3,
-          element["Cost per hour"] * 4,
-          element["Cost per hour"] * 5,
-          element["Cost per hour"] * 6,
-          element["Cost per hour"] * 7,
-          element["Cost per hour"] * 8,
-          element["Cost per hour"] * 9,
-          element["Cost per hour"] * 10,
-          element["Cost per hour"] * 11,
-          element["Cost per hour"] * 12,
+          element["Cost per hour"] * 1 * MONTH,
+          element["Cost per hour"] * 2 * MONTH,
+          element["Cost per hour"] * 3 * MONTH,
+          element["Cost per hour"] * 4 * MONTH,
+          element["Cost per hour"] * 5 * MONTH,
+          element["Cost per hour"] * 6 * MONTH,
+          element["Cost per hour"] * 7 * MONTH,
+          element["Cost per hour"] * 8 * MONTH,
+          element["Cost per hour"] * 9 * MONTH,
+          element["Cost per hour"] * 10 * MONTH,
+          element["Cost per hour"] * 11 * MONTH,
+          element["Cost per hour"] * 12 * MONTH,
         ],
         fill: false,
         borderColor: "#" + randomColor,
@@ -126,7 +127,7 @@ function makeBarChart() {
       const randomColor = Math.floor(Math.random() * 16777215).toString(16);
       var obj = {
         label: element.Vender + ":" + element.Name,
-        data: [Math.round(element["Cost per hour"] * fixedPeriod)],
+        data: [Math.round(element["Cost per hour"] * fixedPeriod * MONTH)],
         borderColor: ["#" + randomColor],
         borderWidth: 1,
       };
